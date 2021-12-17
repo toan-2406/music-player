@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     background-color: #f5f;
+    height: 100vh;
+    color: #d4d3d3;
+    font-family: 'Noto Sans', sans-serif;
+    user-select: none;
+}
+.wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.wrapper .player{
+    position:relative;
+    width: 100%;
+    background: linear-gradient(113deg, #1D1816 , #312D27 );
+    padding: 20px 15px;
+
+}
+
+.player .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.player .header i{
+    font-size: 25px;
+    cursor: pointer;
+}
+.player .header p{
+    text-transform: uppercase;
+    font-size:13px
+}
+.player .cd-img{
+    padding:0 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.player .cd-img img{
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 0 0 7px rgb(248, 245, 245);
+    object-fit: cover;
+}
+.player .info-song{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.player .info-song i{
+    font-size: 25px;
+    cursor: pointer;
+}
+.player .info-song .info-song__detail{
+    text-align: center
+}
+.player .info-song .info-song__detail h2{
+    line-height:1;
+    font-size: 20px;
+    
+}
+.player .time-line{
+   display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.time-line__time{
+    font-size:14px;
+    width:30px;
+
+}
+.player .control{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.player .control i {
+    font-size: 25px;
+    cursor: pointer;
+}
+.player .control .control__play-pause i{
+    font-size: 70px !important;
+}
+.player .control .control__play-pause .play{
+    display: block;
+}
+.player .control .control__play-pause .pause{
+    display: none;
+}
+.player.active .control__play-pause .play{
+    display: none;
+}
+.player.active .control__play-pause .pause{
+    display: block;
+}
+.control .shuffle.active{
+    color: #0f9b45;
+}
+.control .repeat.around{
+    color: #0f9b45;
+}
+.control .repeat.one{
+    color: #0f9b45;
+    position: relative;
+}
+.control .repeat.one::before{
+    content: "1";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: -7px;
+    right: -3px;
+    color: #0f9b45;
+    font-size: 14px;
+}
+
+
+input {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1em;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin-right: 15px;
+  width: 200px;
+  height: 2px;
+  background: #727171;
+  border-radius: 5px;
+  background-image: linear-gradient(#fffefe, #d1d1d1);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Input Thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-moz-range-thumb {
+ -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #fff;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: #fff;
+}
+
+input[type="range"]::-ms-thumb:hover {
+  background: #fff;
+}
+
+/* Input Track */
+input[type=range]::-webkit-slider-runnable-track  {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+input[type=range]::-moz-range-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+input[type="range"]::-ms-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+
+
+/* Playlist */
+.closeBtn{
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.playlist {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(113deg, #1D1816 , #312D27 );
+    z-index: 1;
+   overflow-x: auto;
+   transition: 0.3s;
+}
+.playlist.active{
+    left: 0;
+}
+.playlist__song{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: #282828;
+}
+.playlist__song__img{
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+     box-shadow: inset 0 0 0 5px rgb(248, 245, 245);
+}
+.playlist__song__img img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+   
+}
+.playlist__song__detail{
+    padding: 15px 20px;
+
+}
+.playlist__song__detail h2{
+    font-size:20px;
+    line-height:1;
+    font-weight: 700;
+}
+.playlist__song__detail sub{
+    font-size:14px;
+    font-weight: 400;
+
+}
+.playlist__song__detail p{
+    font-size:14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.playlist__list{
+    width:100%;
+
+}
+.playlist__list--item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    border-bottom: 1px solid #3d3d3d;
+    width: 100%;
+    z-index: 1;
+}
+.playlist__list--item-stt{
+    font-size:20px;
+    font-weight: 700;
+    margin-right: 20px;
+}
+.playlist__list--item-detail{
+    width: 100%;
+    z-index: -1;
+}
+
+.playlist__list--item-detail h2{
+    font-size:20px;
+    line-height:1;
+    font-weight: 400;
+}
+.playlist__list--item-detail sub{
+    font-size:14px;
+    font-weight: 400;
+    line-height:1
+}
+.playlist__list--item-detail__time{
+    font-size:14px;
+    font-weight: 400;
+    line-height:1
+}

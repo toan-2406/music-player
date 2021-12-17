@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="player">
+            <div class="header">
+                <i class="bx bx-chevron-down"></i>
+                <p>Play from playlist</p>
+                <i class="bx bxs-playlist playlistBtn"></i>
+            </div>
+            <div class="cd-img">
+                <img src="./assets/img/buoc_qua_nhau.jpg" alt="" />
+            </div>
+            <div class="info-song">
+                <i class="bx bx-plus"></i>
+                <div class="info-song__detail">
+                    <h2>Artist</h2>
+                    <sub>Song title</sub>
+                </div>
+                <i class="bx bx-dots-vertical-rounded"></i>
+            </div>
+            <div class="time-line">
+                <div class="time-line__time duration">
+                    
+                </div>
+                <input type="range" value="0" min="0" max="100" class="range" id="range" style='background-size: 0% 100%;' />
+                <div class="time-line__time time-remaining">
+                    
+                </div>
+            </div>
+            <div class="control">
+                <div class="shuffle">
+                    <i class="bx bx-shuffle shuffle"></i>
+                </div>
+                <div class="previous">
+                    <i class="bx bx-skip-previous"></i>
+                </div>
+                <div class="control__play-pause">
+                    <div class="play">
+
+                        <i class="bx bx-play-circle"></i>
+                    </div>
+                    <div class="pause">
+                        <i class="bx bx-pause-circle"></i>
+                    </div>
+                </div>
+                <div class="next">
+                    <i class="bx bx-skip-next"></i>
+                </div>
+                <div class="repeat">
+                    <i class="bx bx-sync"></i>
+                </div>
+            </div>
+
+            <audio src="" id="audio"></audio>
+        </div>
+        <div class="playlist">
+            <div class="closeBtn">X</div>
+            <div class="playlist__song">
+                <div class="playlist__song__img">
+                    <img src="./assets/img/buoc_qua_nhau.jpg" alt="" />
+                </div>
+                <div class="playlist__song__detail">
+                    <h2></h2>
+                    <sub></sub>
+                </div>
+            </div>
+            <div class="playlist__list"></div>
+        </div>
+    </div>
+    <script src="./assets/js/range.js"></script>
+    <script src="./assets/js/action.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
